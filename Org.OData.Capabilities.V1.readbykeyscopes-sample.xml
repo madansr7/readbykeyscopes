@@ -162,6 +162,90 @@
             </Record>
           </Annotation>
         </AnnotationOption-2>
+
+        <AnnotationOption-3><!-- following https://github.com/oasis-tcs/odata-vocabularies/blob/ODATA-1285/vocabularies/Org.OData.Capabilities.V1.md#ReadRestrictionsType -->
+          <Annotation Term="Org.Graph.Vocabulary.ReadRestrictions">
+            <Record>
+              <PropertyValue Property="Permissions">
+                <Collection>
+                  <Record>
+                    <PropertyValue Property="Scheme" String="DelegatedWork" />
+                    <PropertyValue Property="Scopes">
+                      <Collection>
+                        <!-- Collection does not need 'User.Read' and 'User.ReadWrite'. It is required only for ReadByKey -->
+                        <!-- 
+                        <Record>
+                          <PropertyValue Property="Scope" String="User.Read"/>
+                        </Record>
+                        <Record>
+                          <PropertyValue Property="Scope" String="User.ReadWrite"/>
+                        </Record> -->
+                        <Record>
+                          <PropertyValue Property="Scope" String="User.ReadBasic.All"/>
+                        </Record>
+                        <Record>
+                          <PropertyValue Property="Scope" String="User.Read.All"/>
+                        </Record>
+                        <Record>
+                          <PropertyValue Property="Scope" String="User.ReadWrite.All"/>
+                        </Record>
+                        <Record>
+                          <PropertyValue Property="Scope" String="Directory.Read.All"/>
+                        </Record>
+                        <Record>
+                          <PropertyValue Property="Scope" String="Directory.ReadWrite.All"/>
+                        </Record>
+                        <Record>
+                          <PropertyValue Property="Scope" String="Directory.AccessAsUser.All"/>
+                        </Record>
+                      </Collection>
+                    </PropertyValue>
+                  </Record>
+                </Collection>
+              </PropertyValue>
+              <PropertyValue Property="ReadByKeyRestrictions">
+                <Record>
+                  <PropertyValue Property="Permissions">
+                    <Collection>
+                      <Record>
+                        <PropertyValue Property="Scheme" String="DelegatedWork" />
+                        <PropertyValue Property="Scopes">
+                          <Collection>
+                            <Record>
+                              <PropertyValue Property="Scope" String="User.Read"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="User.ReadWrite"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="User.ReadBasic.All"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="User.Read.All"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="User.ReadWrite.All"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="Directory.Read.All"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="Directory.ReadWrite.All"/>
+                            </Record>
+                            <Record>
+                              <PropertyValue Property="Scope" String="Directory.AccessAsUser.All"/>
+                            </Record>
+                          </Collection>
+                        </PropertyValue>
+                      </Record>
+                    </Collection>
+                  </PropertyValue>
+                </Record>
+              </PropertyValue>
+            </Record>
+          </Annotation>
+        </AnnotationOption-3>
+
       </Annotations>
 
       <!-- Annotating container with Auth Schemes that contain all the scopes applicable per that security scheme. Graph has 3 security schemes, DelegatedWork, DelegatedPersonal, Application -->
