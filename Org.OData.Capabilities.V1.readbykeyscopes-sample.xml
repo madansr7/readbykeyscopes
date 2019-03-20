@@ -129,7 +129,7 @@
                     We could build an additive list based on the scopes already defined, but that wouldn't allow us to take away scopes in case the ReadByKey has reduced scopes.  -->
                     <PropertyValue Property="ReadByKeyScopes">
                       <Collection>
-                      <!-- User.Read and User.ReadWrite where added to the collection. This list would superseed the list defined above. -->
+                      <!-- User.Read and User.ReadWrite where added to the collection. This list would supersede the list defined above. -->
                         <Record>
                           <PropertyValue Property="Scope" String="User.Read"/>
                         </Record>
